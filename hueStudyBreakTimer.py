@@ -45,17 +45,18 @@ class Hue:
     def timer(self, room_id, planned_learning_hours, learn_perioud_in_min, break_perioud_in_min):
         self.turn_on_room(room_id)
         if self.notification is True:
-            notify("StudyTimer started", "you will be notified in 1 hour")
+            notify('StudyTimer started', 'you will be notified in ' + str(learn_perioud_in_min) + ' minutes')
 
         for i in range(planned_learning_hours):
             time.sleep(learn_perioud_in_min * 60)
             if self.notification is True:
-                notify("Make a break!", "You deserved a little break :)")
+                notify('Make a break!', 'You deserve a little ' + str(break_perioud_in_min) + ' minute break :)')
             hue.blink(room_id, amount=3)
 
             time.sleep(break_perioud_in_min * 60)
             if self.notification is True:
-                notify("Break is over!", "Continue your work :)")
+                notify('Break is over!',
+                       'Continue your work :) Next break in ' + str(learn_perioud_in_min) + ' minutes')
             hue.blink(room_id=0, amount=1)
 
 
