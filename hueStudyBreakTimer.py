@@ -20,7 +20,7 @@ class Hue:
         self.notification = notification
 
     def request(self, room_id, query):
-        url = self.api_url + '/groups/' + room_id + '/action'
+        url = self.api_url + '/groups/' + str(room_id) + '/action'
         return requests.put(url, query)
 
     def blink(self, room_id, amount):
