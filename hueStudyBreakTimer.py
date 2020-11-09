@@ -1,3 +1,5 @@
+from config import ip, api_key
+
 import requests
 import time
 
@@ -11,10 +13,11 @@ def notify(title, text):
 
 
 class Hue:
-    def __init__(self, ip, api_key):
+    def __init__(self, ip, api_key, notification=False):
         self.ip = ip
         self.api_key = api_key
         self.api_url = 'http://' + self.ip + '/api/' + self.api_key
+        self.notification = notification
 
     def request(self, room_id, query):
         url = self.api_url + '/groups/' + room_id + '/action'
@@ -41,19 +44,22 @@ class Hue:
 
     def timer(self, room_id, planned_learning_hours, learn_perioud_in_min, break_perioud_in_min):
         self.turn_on_room(room_id)
-        notify("StudyTimer started", "you will be notified in 1 hour")
+        if self.notification is True:
+            notify("StudyTimer started", "you will be notified in 1 hour")
 
         for i in range(planned_learning_hours):
             time.sleep(learn_perioud_in_min * 60)
-            notify("Make a break!", "You deserved a little break :)")
+            if self.notification is True:
+                notify("Make a break!", "You deserved a little break :)")
             hue.blink(room_id, amount=3)
 
             time.sleep(break_perioud_in_min * 60)
-            notify("Break is over!", "Continue your work :)")
+            if self.notification is True:
+                notify("Break is over!", "Continue your work :)")
             hue.blink(room_id=0, amount=1)
 
 
 if __name__ == '__main__':
-    hue = Hue('ip', 'api_key')
+    hue = Hue(ip=ip, api_key=api_key, notification=True)
 
     hue.timer(room_id=1, planned_learning_hours=10, learn_perioud_in_min=60, break_perioud_in_min=5)
