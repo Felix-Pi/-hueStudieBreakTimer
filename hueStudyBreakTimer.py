@@ -11,7 +11,6 @@ def notify(title, text):
               osascript -e 'display notification "{}" with title "{}"'
               """.format(text, title))
 
-
 class Hue:
     def __init__(self, ip, api_key, notification=False):
         self.ip = ip

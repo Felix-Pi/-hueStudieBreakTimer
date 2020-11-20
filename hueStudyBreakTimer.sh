@@ -2,7 +2,9 @@
 
 if [ "$1" = "stop" ]; then
     kill $(ps -A | grep "[h]ueStudyBreakTimer.py" | awk '{print $1}')
+    osascript -e 'display notification "StudyTimer has been stopped" with title "StudyTimer stopped"'
+
     exit 0
 fi
 
-python /PATH/hueStudyBreakTimer/hueStudyBreakTimer.py &
+python ~/Documents/Dev/python/hueStudyBreakTimer/hueStudyBreakTimer.py &
