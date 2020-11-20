@@ -41,12 +41,12 @@ class Hue:
                 '}'
         self.request(room_id, query)
 
-    def timer(self, room_id, planned_learning_hours, learn_perioud_in_min, break_perioud_in_min):
+    def timer(self, room_id, planned_runtime_in_hours, learn_perioud_in_min, break_perioud_in_min):
         self.turn_on_room(room_id)
         if self.notification is True:
             notify('StudyTimer started', 'you will be notified in ' + str(learn_perioud_in_min) + ' minutes')
 
-        for i in range(planned_learning_hours):
+        for i in range(planned_runtime_in_hours):
             time.sleep(learn_perioud_in_min * 60)
             if self.notification is True:
                 notify('Make a break!', 'You deserve a little ' + str(break_perioud_in_min) + ' minute break :)')
@@ -62,4 +62,4 @@ class Hue:
 if __name__ == '__main__':
     hue = Hue(ip=ip, api_key=api_key, notification=True)
 
-    hue.timer(room_id=1, planned_learning_hours=10, learn_perioud_in_min=60, break_perioud_in_min=5)
+    hue.timer(room_id=1, planned_runtime_in_hours=10, learn_perioud_in_min=60, break_perioud_in_min=5)
