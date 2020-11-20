@@ -7,6 +7,7 @@ made for MacOS
 
 ## Configuration
 Configuration is pretty easy. `config.py` contains `ip` and `api_key` of the philips hue bridge.
+
 `hueStudyBreakTimer.py` contains the timers parameter 
 
 `hueStudyBreakTimer.sh` contains path to `hueStudyBreakTimer.py`
