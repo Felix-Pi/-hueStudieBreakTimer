@@ -49,3 +49,17 @@ sh hueStudyBreakTimer.sh stop
 ```
 
 
+
+
+## Create desktop icon with automator
+Action > execute shell script
+
+### start
+```
+sh ~/Documents/Dev/python/hueStudyBreakTimer/hueStudyBreakTimer.sh &>/dev/null &
+```
+
+## stop
+```
+sh ~/Documents/Dev/python/hueStudyBreakTimer/hueStudyBreakTimer.sh stop
+```
