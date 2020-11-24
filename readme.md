@@ -19,10 +19,6 @@ Creation of api_key is not part of this script (More information: [Hue API](http
 ### hueStudyBreakTimer.sh
 Change path
 
-```sh
-python ~/Documents/Dev/python/hueStudyBreakTimer/hueStudyBreakTimer.py &
-```
-
 ### config.py
 ```python
 ip = '' #hue bridge ip address
@@ -39,15 +35,14 @@ api_key = '' #hue bridge api key
 ```
 
 ## Usage
-### start
-```
-sh hueStudyBreakTimer.sh
-```
 
-
-### stop
 ```
-sh hueStudyBreakTimer.sh stop
+Usage: hueStudyBreakTimer.sh [OPTIONS]
+
+  starts hueStudyBreakTimer
+
+Options:
+  stop     stops hueStudyBreakTimer
 ```
 
 
@@ -58,10 +53,10 @@ Action > execute shell script
 
 ### start
 ```
-sh ~/Documents/Dev/python/hueStudyBreakTimer/hueStudyBreakTimer.sh &>/dev/null &
+sh PATH/hueStudyBreakTimer.sh &>/dev/null &
 ```
 
 ## stop
 ```
-sh ~/Documents/Dev/python/hueStudyBreakTimer/hueStudyBreakTimer.sh stop
+sh PATH/hueStudyBreakTimer.sh stop
 ```
