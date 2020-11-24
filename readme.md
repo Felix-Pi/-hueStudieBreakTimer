@@ -2,7 +2,7 @@
 > blink hue lights and show desktop notification
 
 
-I tend to forget making breaks, so I created this little script to remember me ever hour to make a break by blinking my lights and showing a little notification.
+I tend to forget making breaks, so I created this little script to remind me ever hour to make a break by blinking my lights and showing a desktop notification.
 
 ### Prerequisites
 made for MacOS
