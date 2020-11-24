@@ -12,7 +12,7 @@ Configuration is pretty easy. `config.py` contains `ip` and `api_key` of the phi
 
 `hueStudyBreakTimer.sh` contains path to `hueStudyBreakTimer.py`
 
-Creation of api_key is not part of this script (More information: https://developers.meethue.com/develop/get-started-2/)
+Creation of api_key is not part of this script (More information: [Hue API](https://developers.meethue.com/develop/get-started-2/))
 
 ### hueStudyBreakTimer.sh
 Change path
