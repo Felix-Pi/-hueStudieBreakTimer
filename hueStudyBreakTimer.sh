@@ -7,4 +7,4 @@ if [ "$1" = "stop" ]; then
     exit 0
 fi
 
-python ~/Documents/Dev/python/hueStudyBreakTimer/hueStudyBreakTimer.py &
+python3 ~/dev/python/hueStudyBreakTimer/hueStudyBreakTimer.py &
