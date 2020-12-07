@@ -5,7 +5,12 @@
 I tend to forget making breaks, so I created this little script to remind me ever hour to make a break by blinking my lights and showing a desktop notification.
 
 ### Prerequisites
-made for MacOS
+* huePyApi ([Github](https://github.com/Felix-Pi/huePyApi))
+* made for MacOS
+
+
+### Installation 
+ `python3 -m pip install git+https://github.com/Felix-Pi/huePyApi`
 
 ## Configuration
 Configuration is pretty easy. `config.py` contains `ip` and `api_key` of the philips hue bridge.
